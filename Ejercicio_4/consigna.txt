@@ -1,0 +1,15 @@
+4-Estrucutras de Control SELECT CASE
+
+k- desarrolle nuevamente el ejercicio 1-a (de las calificaciones de alumnos) , esta vez
+utilice la estructura Select Case
+
+l- Determinar el numero de días de un mes dado, que se introduce como un entero en el
+rango de 1....12, si el numero del mes es 2 = Febrero, se debe solicitar al usuario que
+introduzca el numero del año para deducir si el año es bisiesto o no (año bisiesto,
+Febrero = 29 días, sino Febrero = 28 días.)
+
+m- Hacer un programa que escriba los nombre de los días de la semana, en función de una
+variable entera (1..7) DIA.-
+
+n- Realice un programa que acepte N números, (positivos, negativos, decimales, etc) y
+luego genere la lista ordenada de mayor a menor y viceversa, de esos números.

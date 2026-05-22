@@ -1,0 +1,12 @@
+2-Estructuras de Control FOR, NEXT
+
+e- Escribir un programa que sume los cuadrados de los n primeros números enteros pares,
+donde n introduce el usuario.
+
+f- Hacer un programa que imprima una tabla de valores para la siguiente función: y =
+x2 + x + 1 , para valores de x desde –10 hasta +10, con incrementos enteros y/o
+decimales
+
+g- Realizar un programa que genere una tabla que convierta y muestre grados Celsius
+ingresados por el usuario y genere su equivalentes en Fahrenheit y Kevin (las formulas
+de conversión de F y K están el practico Nro. 2, punto 1-c

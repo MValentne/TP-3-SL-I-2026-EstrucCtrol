@@ -1,0 +1,12 @@
+a- hacer un programa que asigne una calificación (una letra) a un estudiante basado en la
+siguiente tabla de puntuación:
+90 - 100 => A, 80 – 89 => B , 70 – 79 => C, 60 – 69 => D, 40 – 59 => E ,
+Menos => F
+
+b- Leer n números por teclado, e informar cual es mayor, menor y cual es la media
+
+c- Leer 3 números enteros, si el primer nro. Es menor que cero, imprimir la suma de los
+tres, sino el producto de los tres.
+
+d- Se desea saber si una fecha ingresada por teclado en un cierto formato dd,mm,aa ,
+corresponde a un año bisiesto.

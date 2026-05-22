@@ -1,0 +1,10 @@
+3-Estrucutras de Control WHILE, DO WHILE, DO, LOOP, etc.
+
+h- Haga un programa que muestre una lista de los 10 primeros nro. Pares y sume esos 10
+primeros números pares, leídos de un conjunto de números al azar.
+
+i- Leer las notas de N alumnos de una clase, en el rango de 1...100, y determinar cual es
+la nota media de la clase.-
+
+j- Encontrar el Factorial ! de un nro positivo ingresado por teclado.- valide que la entrada
+no permita nros. Negativos.-
