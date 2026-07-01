@@ -13,17 +13,34 @@ namespace Punto_2
         public Punto_G()
         {
             InitializeComponent();
+
         }
 
         private void Btn_Suma_Click(object sender, EventArgs e)
         {
-            double temperaturaCelsius = Convert.ToDouble(Num_Ingresar.Value);
-            double temperaturaFahrenheit = temperaturaCelsius * 9.0 / 5.0 + 32.0;
-            double temperaturaKelvin = temperaturaCelsius + 273.15;
-            Lbl_Confirmacion.Text = $"Resultados de las conversiones: \n Celsius: {temperaturaCelsius} °C{1}" +
-                $"\nFahrenheit: {temperaturaFahrenheit} " +
-                $"°F\n{1}Kelvin: {temperaturaKelvin} K\"";
-        }
+            try
+            {
+                double temperaturaCelsius = Convert.ToDouble(Num_Ingresar.Value);
+
+                if (temperaturaCelsius > 250)
+                {
+                    throw new Exception("Supera el máximo indicado (250), ingrese otra temperatura");
+                }
+                if (temperaturaCelsius < -273.15)
+                {
+                    throw new Exception("Es inferior al límite establecido (-273.15, cero absoluto). Ingrese otra temperatura");
+                }
+
+                double temperaturaFahrenheit = temperaturaCelsius * 9.0 / 5.0 + 32.0;
+                double temperaturaKelvin = temperaturaCelsius + 273.15;
+                Lbl_Confirmacion.Text = $"Resultados de las conversiones:\nCelsius: {temperaturaCelsius} °C" +
+                    $"\nFahrenheit: {temperaturaFahrenheit} °F" +
+                    $"\nKelvin: {temperaturaKelvin} K";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
     }
-}
+}}

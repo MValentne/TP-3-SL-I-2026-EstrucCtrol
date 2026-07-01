@@ -32,11 +32,9 @@
             Btn_Ecuacion = new Button();
             Num_Ingresar = new NumericUpDown();
             label1 = new Label();
-            panel1 = new Panel();
-            Lbl_Confirmacion = new Label();
             label2 = new Label();
+            Lista_Resultado = new ListBox();
             ((System.ComponentModel.ISupportInitialize)Num_Ingresar).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // Btn_Regresar
@@ -69,57 +67,46 @@
             // 
             // label1
             // 
-            label1.Location = new Point(12, 61);
+            label1.Location = new Point(2, 76);
             label1.Name = "label1";
-            label1.Size = new Size(251, 30);
+            label1.Size = new Size(251, 18);
             label1.TabIndex = 9;
-            label1.Text = "Por Favor, Ingrese el valor de X";
+            label1.Text = "Por Favor, Ingrese el valor del incremento";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = SystemColors.ControlDark;
-            panel1.Controls.Add(Lbl_Confirmacion);
-            panel1.Location = new Point(269, 61);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(210, 118);
-            panel1.TabIndex = 8;
-            // 
-            // Lbl_Confirmacion
-            // 
-            Lbl_Confirmacion.Location = new Point(0, -3);
-            Lbl_Confirmacion.Name = "Lbl_Confirmacion";
-            Lbl_Confirmacion.Size = new Size(210, 118);
-            Lbl_Confirmacion.TabIndex = 0;
-            Lbl_Confirmacion.Text = "Aquí se mostrará su resultado final";
-            Lbl_Confirmacion.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
             label2.BackColor = SystemColors.AppWorkspace;
             label2.Location = new Point(2, 9);
             label2.Name = "label2";
-            label2.Size = new Size(467, 49);
+            label2.Size = new Size(477, 67);
             label2.TabIndex = 7;
-            label2.Text = "Consigna: Hacer un programa que imprima una tabla de valores para la siguiente función: \r\ny = x2 + x + 1 , para valores de x desde –10 hasta +10, con incrementos enteros y/o\r\ndecimales";
+            label2.Text = "Consigna: Hacer un programa que imprima una tabla de valores para la siguiente función:\r\ny = x^2 + x + 1 , para valores de x desde –10 hasta +10, con incrementos enteros y/o decimales";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // Lista_Resultado
+            // 
+            Lista_Resultado.FormattingEnabled = true;
+            Lista_Resultado.Location = new Point(331, 79);
+            Lista_Resultado.Name = "Lista_Resultado";
+            Lista_Resultado.Size = new Size(120, 109);
+            Lista_Resultado.TabIndex = 13;
             // 
             // Punto_F
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(481, 193);
+            Controls.Add(Lista_Resultado);
             Controls.Add(Btn_Regresar);
             Controls.Add(Btn_Ecuacion);
             Controls.Add(Num_Ingresar);
             Controls.Add(label1);
-            Controls.Add(panel1);
             Controls.Add(label2);
             Name = "Punto_F";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Punto_F";
             ((System.ComponentModel.ISupportInitialize)Num_Ingresar).EndInit();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -129,8 +116,7 @@
         private Button Btn_Ecuacion;
         private NumericUpDown Num_Ingresar;
         private Label label1;
-        private Panel panel1;
-        private Label Lbl_Confirmacion;
         private Label label2;
+        private ListBox Lista_Resultado;
     }
 }

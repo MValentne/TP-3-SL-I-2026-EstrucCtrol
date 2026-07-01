@@ -41,7 +41,7 @@
             // 
             // Btn_Regresar
             // 
-            Btn_Regresar.Location = new Point(135, 120);
+            Btn_Regresar.Location = new Point(135, 139);
             Btn_Regresar.Name = "Btn_Regresar";
             Btn_Regresar.Size = new Size(128, 62);
             Btn_Regresar.TabIndex = 18;
@@ -50,7 +50,7 @@
             // 
             // Btn_Conversion
             // 
-            Btn_Conversion.Location = new Point(1, 120);
+            Btn_Conversion.Location = new Point(1, 139);
             Btn_Conversion.Name = "Btn_Conversion";
             Btn_Conversion.Size = new Size(128, 62);
             Btn_Conversion.TabIndex = 17;
@@ -60,20 +60,20 @@
             // 
             // Num_Ingresar
             // 
-            Num_Ingresar.Location = new Point(73, 95);
-            Num_Ingresar.Maximum = new decimal(new int[] { 250, 0, 0, 0 });
-            Num_Ingresar.Minimum = new decimal(new int[] { 27315, 0, 0, -2147352576 });
+            Num_Ingresar.Location = new Point(71, 110);
+            Num_Ingresar.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            Num_Ingresar.Minimum = new decimal(new int[] { 1000, 0, 0, int.MinValue });
             Num_Ingresar.Name = "Num_Ingresar";
             Num_Ingresar.Size = new Size(123, 23);
             Num_Ingresar.TabIndex = 16;
             // 
             // label1
             // 
-            label1.Location = new Point(12, 62);
+            label1.Location = new Point(12, 59);
             label1.Name = "label1";
-            label1.Size = new Size(251, 30);
+            label1.Size = new Size(251, 48);
             label1.TabIndex = 15;
-            label1.Text = "Por Favor, Ingrese el valor de temperatura en grados Celsius";
+            label1.Text = "Por Favor, Ingrese el valor de temperatura en grados Celsius. \r\n(Minimo, -273,15; Maximo, 250)";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -82,14 +82,14 @@
             panel1.Controls.Add(Lbl_Confirmacion);
             panel1.Location = new Point(269, 62);
             panel1.Name = "panel1";
-            panel1.Size = new Size(210, 118);
+            panel1.Size = new Size(210, 139);
             panel1.TabIndex = 14;
             // 
             // Lbl_Confirmacion
             // 
-            Lbl_Confirmacion.Location = new Point(0, -3);
+            Lbl_Confirmacion.Location = new Point(3, 0);
             Lbl_Confirmacion.Name = "Lbl_Confirmacion";
-            Lbl_Confirmacion.Size = new Size(210, 118);
+            Lbl_Confirmacion.Size = new Size(210, 139);
             Lbl_Confirmacion.TabIndex = 0;
             Lbl_Confirmacion.Text = "Aquí se mostrará su resultado final";
             Lbl_Confirmacion.TextAlign = ContentAlignment.MiddleCenter;
@@ -101,14 +101,14 @@
             label2.Name = "label2";
             label2.Size = new Size(467, 49);
             label2.TabIndex = 13;
-            label2.Text = "Consigna: Realizar un programa que genere una tabla que convierta y muestre grados Celsius\r\ningresados por el usuario y genere su equivalentes en Fahrenheit y Kevin";
+            label2.Text = "Consigna: Realizar un programa que genere una tabla que convierta y muestre grados Celsius\r\ningresados por el usuario y genere su equivalentes en Fahrenheit y Kelvin";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Punto_G
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(481, 193);
+            ClientSize = new Size(481, 213);
             Controls.Add(Btn_Regresar);
             Controls.Add(Btn_Conversion);
             Controls.Add(Num_Ingresar);
