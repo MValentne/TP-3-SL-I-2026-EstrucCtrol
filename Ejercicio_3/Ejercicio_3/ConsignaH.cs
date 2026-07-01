@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,17 +19,29 @@ namespace Ejercicio_3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int[] numeros = new int[10]; //Array de 10 elementos
-
-            for (int i = 0; i < numeros.Length; i++)
+            try
             {
-                numeros[i] = rnd.Next(1, 501) * 2; // números entre 1 y 500, multiplicados por 2 para asegurar que sean pares
+                listBox1.Items.Clear();
+                Random rnd = new Random();
+                int[] numeros = new int[10]; //Array de 10 elementos
+                int suma = 0;
+
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    numeros[i] = rnd.Next(1, 501) * 2; // números entre 1 y 500, multiplicados por 2 para asegurar que sean pares
+                    suma += numeros[i];
+                }
+
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    listBox1.Items.Add(numeros[i]); // Agrega cada número al ListBox
+                }
+
+                MessageBox.Show($"La suma de los 10 números pares es: {suma}", "Suma de Pares", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            for(int i = 0; i < numeros.Length; i++)
+            catch (Exception ex)
             {
-                listBox1.Items.Add(numeros[i]); // Agrega cada número al ListBox
+                MessageBox.Show($"Ocurrió un error inesperado: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
