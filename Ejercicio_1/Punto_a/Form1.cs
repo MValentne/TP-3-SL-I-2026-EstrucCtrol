@@ -15,50 +15,56 @@ namespace Punto_a
 
         private void btnVerificarNota_Click(object sender, EventArgs e)
         {
-            nota = int.Parse(txtPuntuacion.Text);
-            if ((nota >= 90) && (nota <= 100))
+            try
             {
-                lblResultado.Visible = true;
-                lblResultado.Text = "Su nota es A! :)";
-            }
-            else
-            {
-                if ((nota >= 80) && (nota <= 89))
+                nota = int.Parse(txtPuntuacion.Text);
+                if ((nota >= 90) && (nota <= 100))
                 {
                     lblResultado.Visible = true;
-                    lblResultado.Text = "Su nota es B! :)";
+                    lblResultado.Text = "Su nota es A! :)";
                 }
                 else
                 {
-                    if ((nota >= 70) && (nota <= 79))
+                    if ((nota >= 80) && (nota <= 89))
                     {
                         lblResultado.Visible = true;
-                        lblResultado.Text = "Su nota es C!";
+                        lblResultado.Text = "Su nota es B! :)";
                     }
                     else
                     {
-                        if ((nota >= 60) && (nota <= 69))
+                        if ((nota >= 70) && (nota <= 79))
                         {
                             lblResultado.Visible = true;
-                            lblResultado.Text = "Su nota es D";
+                            lblResultado.Text = "Su nota es C!";
                         }
                         else
                         {
-                            if ((nota >= 40) && (nota <= 59))
+                            if ((nota >= 60) && (nota <= 69))
                             {
                                 lblResultado.Visible = true;
-                                lblResultado.Text = "Su nota es E :(";
+                                lblResultado.Text = "Su nota es D";
                             }
                             else
                             {
-                                lblResultado.Visible = true;
-                                lblResultado.Text = "Su nota es F :(";
+                                if ((nota >= 40) && (nota <= 59))
+                                {
+                                    lblResultado.Visible = true;
+                                    lblResultado.Text = "Su nota es E :(";
+                                }
+                                else
+                                {
+                                    lblResultado.Visible = true;
+                                    lblResultado.Text = "Su nota es F :(";
 
+                                }
                             }
                         }
                     }
                 }
             }
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ingrese un valor válido, recuerde que el limite superior es 100 y el inferior es 1.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
     }
-}
+}}

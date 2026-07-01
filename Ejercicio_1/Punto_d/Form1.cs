@@ -14,50 +14,59 @@ namespace Punto_d
 
         private void btnVerificarAño_Click(object sender, EventArgs e)
         {
-            // para el mtbFechitaNacimiento
-            separarfecha = new string[3];
-            if (mtbFechitaNacimiento.MaskCompleted == false)
+            try
             {
-                lblResultado.Visible = true;
-                lblResultado.Text = "Por favor, ingrese una fecha de nacimiento válida.";   
-                MessageBox.Show("Por favor, ingrese una fecha de nacimiento válida.");
-                return;
-            }
+                if(mtbFechitaNacimiento.Text == "")
+                {
+                    throw new Exception("Por favor, ingrese una fecha de nacimiento válida.");
+                }
 
-            separarfecha = mtbFechitaNacimiento.Text.Split('/');
-            dia = int.Parse(separarfecha[0]);
-            mes = int.Parse(separarfecha[1]);
-            año = int.Parse(separarfecha[2]) + 2000;
+                // para el mtbFechitaNacimiento
+                separarfecha = new string[3];
+                if (mtbFechitaNacimiento.MaskCompleted == false)
+                {
+                    lblResultado.Visible = true;
+                    lblResultado.Text = "Por favor, ingrese una fecha de nacimiento válida.";
+                    MessageBox.Show("Por favor, ingrese una fecha de nacimiento válida.");
+                    return;
+                }
 
-            if (año % 4 == 0 && (año % 100 != 0 || año % 400 == 0))
-            {
-                lblResultado.Visible = true;
-                lblResultado.Text = "El año es bisiesto.";
-                MessageBox.Show("El año es bisiesto.");
-            }
-            else
-            {
-                lblResultado.Visible = true;
-                lblResultado.Text = "El año no es bisiesto.";
-                MessageBox.Show("El año no es bisiesto.");
-            }
+                separarfecha = mtbFechitaNacimiento.Text.Split('/');
+                dia = int.Parse(separarfecha[0]);
+                mes = int.Parse(separarfecha[1]);
+                año = int.Parse(separarfecha[2]) + 2000;
 
-            /* para el txtFechaNacimiento
-            fechaNacimiento = int.Parse(txtFechaNacimiento.Text);
-            if (fechaNacimiento % 4 == 0 && (fechaNacimiento % 100 != 0 || fechaNacimiento % 400 == 0))
+                if (año % 4 == 0 && (año % 100 != 0 || año % 400 == 0))
+                {
+                    lblResultado.Visible = true;
+                    lblResultado.Text = "El año es bisiesto.";
+                    MessageBox.Show("El año es bisiesto.");
+                }
+                else
+                {
+                    lblResultado.Visible = true;
+                    lblResultado.Text = "El año no es bisiesto.";
+                    MessageBox.Show("El año no es bisiesto.");
+                }
+            }catch(FormatException)
             {
-                lblResultado.Visible = true;
-                lblResultado.Text = "El año es bisiesto.";
-                MessageBox.Show("El año es bisiesto.");
+                MessageBox.Show("Error: Recuerde añadir unicamente numeros en cada seccion, ademas de completar todos los espacios. ","Error");
+                /* para el txtFechaNacimiento
+                fechaNacimiento = int.Parse(txtFechaNacimiento.Text);
+                if (fechaNacimiento % 4 == 0 && (fechaNacimiento % 100 != 0 || fechaNacimiento % 400 == 0))
+                {
+                    lblResultado.Visible = true;
+                    lblResultado.Text = "El año es bisiesto.";
+                    MessageBox.Show("El año es bisiesto.");
+                }
+                else
+                {
+                    lblResultado.Visible = true;
+                    lblResultado.Text = "El año no es bisiesto.";
+                    MessageBox.Show("El año no es bisiesto.");
+                }
+
+                */
             }
-            else
-            {
-                lblResultado.Visible = true;
-                lblResultado.Text = "El año no es bisiesto.";
-                MessageBox.Show("El año no es bisiesto.");
-            }
-        
-            */
-        }
     }
-}
+}}
