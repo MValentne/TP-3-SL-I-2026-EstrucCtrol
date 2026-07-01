@@ -17,9 +17,23 @@ namespace Punto_2
 
         private void Btn_Suma_Click(object sender, EventArgs e)
         {
-            double X = Convert.ToDouble(Num_Ingresar.Value);
-            double Resultado = Math.Pow(X, 2) + X - 1;
-            Lbl_Confirmacion.Text = $"El resultado de la ecuacion X^2 + X - 1 con el valor de X = {X} es: {Resultado}";
-        }
+            try
+            {
+                if (Num_Ingresar.Value < 0)
+                {
+                    throw new Exception("Los incrementos no pueden ser negativos, Ingrese un valor diferente.");
+                }
+                double ValorIngresado = Convert.ToDouble(Num_Ingresar.Value);
+            for (double X = -10; X <= 10; X++)
+                {
+                    double Resultado = (Math.Pow(X, 2) + X + 1) + ValorIngresado;
+                    Lista_Resultado.Items.Add($"f({X}) = {Resultado}");
+                }
+                    
+                
+            }catch(Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
     }
-}
+}}

@@ -73,7 +73,7 @@
             label1.Name = "label1";
             label1.Size = new Size(251, 30);
             label1.TabIndex = 3;
-            label1.Text = "Por Favor, Ingrese un numero para sumar sus iteraciones pares (Maximo 1000)";
+            label1.Text = "Por Favor, Ingrese el numero de iteraciones para sumar (Maximo 1000)";
             // 
             // Num_Ingresar
             // 
