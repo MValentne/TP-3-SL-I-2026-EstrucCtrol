@@ -19,8 +19,9 @@ namespace Consigna4PuntoK
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textBox1.Text.Trim(), out int puntuacion))
-            {
+            try
+            {   
+                int puntuacion = int.Parse(textBox1.Text);
                 string calificacionFinal = "";
 
                 switch (puntuacion)
@@ -58,10 +59,9 @@ namespace Consigna4PuntoK
 
                 textBox1.Clear();
                 textBox1.Focus();
-            }
-            else
+            }catch
             {
-                MessageBox.Show("Por favor, ingresa una puntuación numérica válida.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un error en la proceso, ingrese nuevamente la calificacion.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBox1.Clear();
                 textBox1.Focus();
             }
