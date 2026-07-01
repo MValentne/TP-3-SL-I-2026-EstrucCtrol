@@ -4,7 +4,6 @@ namespace Punto_c
     {
         int i = 0;
         int[] numeros = new int[3];
-        int numero;
         int suma;
         double producto;
         public Form1()
