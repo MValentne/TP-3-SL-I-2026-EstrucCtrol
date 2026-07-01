@@ -19,49 +19,58 @@ namespace Consigna4PuntoM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string textoUsuario = this.textBox1.Text;
-            int NumeroEntero;
 
-            int.TryParse(textoUsuario, out NumeroEntero);
-
-
-
-            if (NumeroEntero <= 7 & NumeroEntero >= 1)
+            try
             {
+                string textoUsuario = this.textBox1.Text;
+                int NumeroEntero;
+                int.TryParse(textoUsuario, out NumeroEntero);
 
-                switch (NumeroEntero)
+                if (NumeroEntero < 1 || NumeroEntero > 7)
+                {
+                    throw new Exception("Ingrese un número correspondiente a un día de la semana (Del 1 al 7)");   
+                }
                 {
 
-                    case 1:
-                        MessageBox.Show("El dia de la semana es Lunes", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                    switch (NumeroEntero)
+                    {
 
-                    case 2:
-                        MessageBox.Show("El dia de la semana es Martes", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                        case 1:
+                            MessageBox.Show("El dia de la semana es Lunes", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
 
-                    case 3:
-                        MessageBox.Show("El dia de la semana es Miercoles", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                        case 2:
+                            MessageBox.Show("El dia de la semana es Martes", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
 
-                    case 4:
-                        MessageBox.Show("El dia de la semana es Jueves", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                        case 3:
+                            MessageBox.Show("El dia de la semana es Miercoles", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
 
-                    case 5:
-                        MessageBox.Show("El dia de la semana es Viernes", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                        case 4:
+                            MessageBox.Show("El dia de la semana es Jueves", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
 
-                    case 6: 
-                        MessageBox.Show("El dia de la semana Sabado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                        case 5:
+                            MessageBox.Show("El dia de la semana es Viernes", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
 
-                    case 7:
-                        MessageBox.Show("El dia de la semana es Domingo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        break;
+                        case 6:
+                            MessageBox.Show("El dia de la semana Sabado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+
+                        case 7:
+                            MessageBox.Show("El dia de la semana es Domingo", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
+                    }
                 }
             }
-            else { MessageBox.Show("Ingrese un número correspondiente a un día de la semana", "El número ingresado no es válido", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBox1.Clear();
+                textBox1.Focus();
+            }
         }
     }
 }
